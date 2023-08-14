@@ -10,6 +10,10 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   int count = 0;
 
+  String get countPlaceholder {
+    return "Click${count == 1 ? '' : 's'}";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +29,8 @@ class _CounterScreenState extends State<CounterScreen> {
             "$count",
             style: const TextStyle(fontSize: 160, fontWeight: FontWeight.w100),
           ),
-          const Text("Click Count",
-              style: TextStyle(
+          Text(countPlaceholder,
+              style: const TextStyle(
                 fontSize: 25,
               ))
         ],
