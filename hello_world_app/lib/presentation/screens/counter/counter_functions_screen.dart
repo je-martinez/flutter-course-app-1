@@ -70,6 +70,7 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
           CustomButtom(
             icon: Icons.exposure_minus_1,
             onPress: () {
+              if (count == 0) return;
               count--;
               setState(() {});
             },
